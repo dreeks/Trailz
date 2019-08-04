@@ -22,8 +22,9 @@ public class TrailzNetwork {
         buf.writeCharSequence(str, Charset.forName("utf-8"));
     }
 
-    public static String readString(ByteBuf buf) {
+    public static String readString(ByteBuf buf, int maxSize) {
         int l = buf.readInt();
+        if (l > maxSize) l = maxSize;
         return buf.readCharSequence(l, Charset.forName("utf-8")).toString();
     }
 

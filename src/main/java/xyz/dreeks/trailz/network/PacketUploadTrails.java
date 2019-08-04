@@ -12,13 +12,16 @@ public class PacketUploadTrails implements IMessage {
         this.trail = t;
     }
 
+    /** Forced by MC/Forge so keep it there */
+    public PacketUploadTrails() {}
+
     @Override
     public void fromBytes(ByteBuf buf) {
         Trail t = new Trail();
-        t.setName(TrailzNetwork.readString(buf));
-        t.setCreator(TrailzNetwork.readString(buf));
-        t.setUUID(TrailzNetwork.readString(buf));
-        t.setTexture(TrailzNetwork.readString(buf));
+        t.setName(TrailzNetwork.readString(buf, 20));
+        t.setCreator(TrailzNetwork.readString(buf, 20));
+        t.setUUID(TrailzNetwork.readString(buf, 36));
+        t.setTexture(TrailzNetwork.readString(buf, 200)); // @TODO: Find a max size for the choosed png dim
         this.trail = t;
     }
 
