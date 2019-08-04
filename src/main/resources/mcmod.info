@@ -1,0 +1,16 @@
+[
+{
+  "modid": "trailz",
+  "name": "trailz",
+  "description": "Fun mod that add trails similar to Garry's mod / Counter strike ones",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Oxodao", "cylgom"],
+  "credits": "thanks to the internet to be so awesome",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
